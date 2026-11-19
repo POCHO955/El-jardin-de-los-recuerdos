@@ -53,3 +53,4 @@ npm run preview  # probar la compilación
 ## Nota
 
 Como Vercel es serverless y de solo lectura, la base SQLite vive en el navegador de cada persona. Por eso cada visitante ve su propio jardín.
+# El-jardin-de-los-recuerdos
