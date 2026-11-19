@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>El Jardín de los Recuerdos</title>
+  <meta name="description" content="Planta recuerdos y mira cómo florecen. Hecho con Vite, TypeScript y SQLite (sql.js)." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="cabecera">
+    <h1>El Jardín de los Recuerdos</h1>
+    <p>Planta un recuerdo y mira cómo florece.</p>
+    <button id="btn-plantar" class="btn btn-principal" type="button">Plantar un recuerdo</button>
+  </header>
+
+  <main>
+    <section class="barra" aria-label="Filtros del jardín">
+      <div id="chips" class="chips" role="group" aria-label="Filtrar por emoción"></div>
+      <label class="orden">Ordenar por fecha
+        <select id="orden">
+          <option value="recientes">Más recientes primero</option>
+          <option value="antiguos">Más antiguos primero</option>
+        </select>
+      </label>
+    </section>
+
+    <p id="conteo" class="conteo" aria-live="polite"></p>
+    <section id="jardin" class="jardin" aria-label="Tu jardín"></section>
+  </main>
+
+  <dialog id="dlg-form">
+    <form id="form" method="dialog">
+      <h2 id="form-titulo">Plantar un recuerdo</h2>
+      <input type="hidden" id="f-id" />
+      <label>¿Qué quieres recordar?
+        <textarea id="f-texto" required maxlength="280" rows="4" placeholder="Ej: El día que aprendí a andar en bicicleta"></textarea>
+      </label>
+      <label>¿Cómo se siente?
+        <select id="f-emocion" required></select>
+      </label>
+      <label>¿Cuándo pasó?
+        <input type="date" id="f-fecha" required />
+      </label>
+      <p id="f-error" class="error" role="alert" hidden></p>
+      <div class="acciones">
+        <button type="button" id="f-cancelar" class="btn">Cancelar</button>
+        <button type="submit" class="btn btn-principal" id="f-guardar">Plantar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="dlg-detalle">
+    <div class="detalle">
+      <div id="d-flor" class="detalle-flor" aria-hidden="true"></div>
+      <p id="d-texto" class="detalle-texto"></p>
+      <p id="d-meta" class="detalle-meta"></p>
+      <div class="acciones">
+        <button type="button" id="d-cerrar" class="btn">Cerrar</button>
+        <button type="button" id="d-editar" class="btn">Editar</button>
+        <button type="button" id="d-eliminar" class="btn btn-peligro">Arrancar flor</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
