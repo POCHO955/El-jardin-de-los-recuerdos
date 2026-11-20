@@ -2,7 +2,7 @@
 
 Sitio web donde plantas recuerdos y los ves crecer como flores. Cada emoción tiene su propia flor (alegría, amor, nostalgia, gratitud, calma, tristeza).
 
-**Sitio en vivo:** _pega aquí tu URL de Vercel_
+**Sitio en vivo:** https://jardin-de-los-recuerdos-omega.vercel.app
 
 ## Qué puedes hacer
 
